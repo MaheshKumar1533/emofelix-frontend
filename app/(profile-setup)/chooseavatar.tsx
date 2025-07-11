@@ -3,8 +3,7 @@ import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import emptyavatar from '../../assets/images/avatars/emptyavatar.png';
-import avatars from '../../constants/avatars';
-
+import { avatars } from '../../constants/constants';
 
 const ChooseAvatar = () => {
     const [avatar, setAvatar] = useState(emptyavatar);

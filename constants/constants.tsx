@@ -13,6 +13,13 @@ import avatar12 from "../assets/images/avatars/avatar12.png";
 import avatar13 from "../assets/images/avatars/avatar13.png";
 import avatar14 from "../assets/images/avatars/avatar14.png";
 
+import dad from "../assets/images/characters/dad.png";
+import mom from "../assets/images/characters/mom.png";
+import sister from "../assets/images/characters/sister.png";
+import brother from "../assets/images/characters/brother.png";
+import son from "../assets/images/characters/son.png";
+import daughter from "../assets/images/characters/daughter.png";
+
 const avatars = [
     avatar1,
     avatar2,
@@ -30,4 +37,13 @@ const avatars = [
     avatar14
 ];
 
-export default avatars;
+const characters = [
+    { name: "Dad", image: dad },
+    { name: "Mom", image: mom },
+    { name: "Sister", image: sister },
+    { name: "Brother", image: brother },
+    { name: "Son", image: son },
+    { name: "Daughter", image: daughter }
+]
+
+export { avatars, characters };

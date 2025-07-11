@@ -3,7 +3,7 @@ import Feather from '@expo/vector-icons/Feather';
 import { Checkbox } from 'expo-checkbox';
 import { router } from 'expo-router';
 import React from 'react';
-import { Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const SignIn = () => {
   const goToNameSelection = () => {
@@ -42,7 +42,7 @@ const SignIn = () => {
           </View>
           <Text className='text-blue-500 text-sm'>Forgot Password?</Text>
         </View>
-        <TouchableOpacity className='bg-buttonprimary rounded-full p-2 w-full' onPress={goToNameSelection}>
+        <TouchableOpacity className='bg-buttonprimary rounded-full p-2 w-full' onPress={() => router.push("/")}>
           <Text className='text-buttontext text-center font-semibold text-2xl'>Continue</Text>
         </TouchableOpacity>
         <View className='w-full flex flex-row items-center justify-between mt-4'>

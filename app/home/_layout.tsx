@@ -9,7 +9,7 @@ const Layout = () => {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
       style={{ flex: 1 }}
-      className='w-full h-full items-center justify-center'>
+      className='w-full h-full items-center justify-center p-5'>
       <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} className='w-full h-full'>
         <Slot />
       </SafeAreaView>
