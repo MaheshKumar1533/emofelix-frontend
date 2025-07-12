@@ -10,6 +10,6 @@ module.exports = {
         buttontext: "#333"
       },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
 };
