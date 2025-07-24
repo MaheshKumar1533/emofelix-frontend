@@ -1,0 +1,20 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { Slot } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+const Layout = () => {
+  return (
+    <LinearGradient colors={['#FCFFD8', '#53C2E1']}
+      locations={[0.4073, 1.2]}
+      start={{ x: 0.5, y: 0 }}
+      end={{ x: 0.5, y: 1 }}
+      style={{ flex: 1 }}
+      className='w-full h-full items-center justify-center'>
+      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} className='w-full h-full'>
+        <Slot />
+      </SafeAreaView>
+    </LinearGradient>
+  )
+}
+
+export default Layout;

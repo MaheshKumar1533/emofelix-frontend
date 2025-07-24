@@ -5,7 +5,6 @@ import { characters } from "../constants/constants";
 import "./globals.css";
 
 export default function App() {
-
   return (
     <View className="flex-1 items-center justify-center w-full h-full py-12 px-2">
       <TouchableOpacity className="absolute top-10 right-8 p-2 rounded-xl bg-white shadow-lg">
@@ -16,11 +15,14 @@ export default function App() {
         data={characters}
         numColumns={2}
         className="w-full mt-4 mx-auto"
-        renderItem={({ item }) => (
-          <View className="flex items-center p-8 border-b border-gray-200 bg-white rounded-2xl shadow-lg w-5/12 aspect-square justify-center mx-auto my-3">
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            className="flex items-center p-8 border-b border-gray-200 bg-white rounded-2xl shadow-lg w-5/12 aspect-square justify-center mx-auto my-3"
+            onPress={() => router.push(`/character/${index}` as any)}
+          >
             <Image source={item.image} className="w-full h-full rounded-2xl object-cover" />
             <Text className="font-bold text-2xl">{item.name}</Text>
-          </View>
+          </TouchableOpacity>
         )}
         keyExtractor={(item) => item.name}
       />
