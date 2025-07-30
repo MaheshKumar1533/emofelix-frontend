@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import emptyavatar from '../../assets/images/avatars/emptyavatar.png';
 import { avatars } from '../../constants/constants';
+import { BackButton } from '../../components/Buttons';
 
 const ChooseAvatar = () => {
     const [avatar, setAvatar] = useState(emptyavatar);
@@ -14,9 +15,7 @@ const ChooseAvatar = () => {
 
     return (
         <View className='w-full h-full flex flex-col items-center justify-center gap-10'>
-            <TouchableOpacity className='absolute left-0 bg-white rounded-2xl top-[-5px] shadow-lg h-[40px] w-[40px] flex align-center justify-center' onPress={() => router.push('/namesetup')}>
-                <Feather name="arrow-left" size={24} color="black" className='self-center' />
-            </TouchableOpacity>
+            <BackButton absolute={true} />
             <Text className='font-bold text-2xl text-center'>Choose an Avatar</Text>
             <View className='w-1/3 aspect-square flex items-center'>
                 <Image source={avatar} className='w-full h-full object-cover rounded-2xl shadow-lg' />

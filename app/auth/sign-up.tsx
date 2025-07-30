@@ -4,22 +4,18 @@ import { router } from 'expo-router';
 import React from 'react';
 
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { BackButton, PrimaryButton } from '../../components/Buttons';
 
 const SignUp = () => {
-  const handleBackPress = () => {
-    router.push('/auth/home');
-  }
 
-  const goToNameSelection = () => {
+  const handleSignUp = () => {
     router.push('/namesetup');
   }
 
   return (
     <View className='w-full h-full flex items-center justify-center p-4 gap-10'>
-      <View className='w-full flex items-center justify-center gap-2 relative'>
-        <TouchableOpacity className='absolute left-0 bg-white rounded-2xl shadow-lg h-[40px] w-[40px] flex align-center justify-center' onPress={handleBackPress}>
-          <AntDesign name="arrowleft" size={24} color="black" className='self-center' />
-        </TouchableOpacity>
+      <View className='w-full flex flex-row items-center justify-center gap-2 relative'>
+        <BackButton absolute={true} />
         <Text className='text-2xl font-bold text-center'>Create an Account</Text>
       </View>
       <View className='mt-4 bg-white p-8 w-full flex items-center justify-center rounded-[32px] shadow-lg gap-5'>
@@ -37,9 +33,7 @@ const SignUp = () => {
           <Feather name="check" size={24} color="black" />
           <TextInput className='w-full' placeholder='Confirm Password' secureTextEntry={true} />
         </View>
-        <TouchableOpacity className='bg-buttonprimary rounded-full p-2 w-full' onPress={goToNameSelection}>
-          <Text className='text-buttontext text-center font-semibold text-2xl'>Sign Up</Text>
-        </TouchableOpacity>
+        <PrimaryButton title='Sign Up' onPress={handleSignUp} />
         <View className='w-full flex flex-row items-center justify-between mt-4'>
           <View className='w-[30%] h-[1px] bg-gray-400 justify-self-center'></View>
           <Text className='text-gray-500 text-sm font-bold'>or continue with</Text>

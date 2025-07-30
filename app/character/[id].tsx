@@ -7,6 +7,7 @@ import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { characters } from '../../constants/constants';
+import { BackButton, SettingsButton } from "../../components/Buttons";
 
 const CharacterPage = () => {
     const { id } = useLocalSearchParams<{ id: string }>();
@@ -15,16 +16,12 @@ const CharacterPage = () => {
     return (
         <View className="flex-1 items-center justify-between w-full h-full py-12 px-2">
             <View className='topbar flex flex-row items-center justify-between w-full'>
-                <TouchableOpacity className='left-0 bg-white rounded-2xl shadow-lg h-[40px] w-[40px] flex align-center justify-center'>
-                    <Feather name="arrow-left" size={24} color="gray" className='self-center' />
-                </TouchableOpacity>
+                <BackButton />
                 <View className='character flex flex-row items-center h-[50px] w-auto overflow-hidden justify-center gap-4'>
                     <Image source={characters[characterIndex].image} className='w-[50px] aspect-square object-contain rounded-xl' />
                     <Text className='text-black text-3xl font-bold'>{characters[characterIndex].name}</Text>
                 </View>
-                <TouchableOpacity className="p-2 rounded-xl bg-white shadow-lg">
-                    <Ionicons name="settings-sharp" size={24} color="gray" />
-                </TouchableOpacity>
+                <SettingsButton />
             </View>
             <View className="flex flex-col items-center justify-center w-full bg-white p-8 rounded-2xl shadow-lg gap-5">
                 <Text className="text-black text-xl font-semibold">How are you feeling right now?</Text>
